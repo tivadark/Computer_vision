@@ -1,2 +1,4 @@
 # Computer_vision
-Gépi látás - Széchenyi István University in Győr
+Gépi látás féléves beadandó feladat - Széchenyi István University in Győr
+
+Pénzérme számláló alkalmazás
