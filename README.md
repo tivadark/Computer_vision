@@ -1,7 +1,7 @@
 ## Computer_vision
-#Gépi látás féléves beadandó feladat - Széchenyi István University in Győr
+# Gépi látás féléves beadandó feladat - Széchenyi István University in Győr
 
-#Coin recognition application - Pénzérme számláló alkalmazás 
+# Coin recognition application - Pénzérme számláló alkalmazás 
 
 How to set it up on Windows?
  ..to run the application first you need to install the imported packages for python.
