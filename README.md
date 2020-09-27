@@ -14,3 +14,5 @@ OpenCV: pip install opencv-python
 
 
 Python releases: https://www.python.org/downloads/release/python-377/
+
+Tested with Python verion 3.7.7
