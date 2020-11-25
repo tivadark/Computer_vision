@@ -2,7 +2,7 @@
 #Computer vision course - Szechenyi Istvan University of Gyor
 #erme recognition application
 
-#TODO:
+#TODO LIST:
 #Ismeretlen meretu kor?
 #Erme szin
 #UI?
@@ -43,7 +43,7 @@ def erme_detektalasa():
 
     return kor_alakzatok
 
-def osszeg_szamitas():
+def osszeg_szamitas(): #TODO: szin hozzaadas
     ermek = {
         "5 Ft": {
             "ertek": 5,
@@ -118,7 +118,6 @@ def osszeg_szamitas():
 
 
     cv2.imwrite("output_kepek/ermek_daraertek_korvonal.jpg", korvonalas_ermek)
-
 
 
 if __name__ == "__main__": ##az osszeg kiszamolasa a __name__ guardot kovetoen
