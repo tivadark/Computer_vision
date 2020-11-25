@@ -1,65 +1,125 @@
 #Kamondy Tivadar - 2020
 #Computer vision course - Szechenyi Istvan University of Gyor
-#Coin recognition application
+#erme recognition application
 
-#import libaries
+#TODO:
+#Ismeretlen meretu kor?
+#Erme szin
+#UI?
+
 import cv2
 import numpy as np
 
-#loading in the image
-img = cv2.imread("coins.jpg");
+def erme_detektalasa():
+    erme_forint = cv2.imread('input_kepek/ermek.jpg', 1)
 
-# blurring and convert image to grey scale
-gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-blurred = cv2.GaussianBlur(img, (17, 17), 0)
+    szurkeranyalatos = cv2.cvtColor(erme_forint, cv2.COLOR_BGR2GRAY)
+    forraskep = cv2.medianBlur(szurkeranyalatos, 7)
+    
+    kor_alakzatok = cv2.HoughCircles( ##Hough kor transzformacio parameterezes
+        forraskep,
+        cv2.HOUGH_GRADIENT,  # detektalas tipusa
+        1,
+        50,
+        param1=100,
+        param2=50,
+        minRadius=10,  # minimum sugar
+        maxRadius=380,  # maximum sugar
+    )
 
-# showing the blurred and grey scaled image
-cv2.imshow("grey scale", gray)
-cv2.imshow("blurred", blurred)
-cv2.waitKey(0)
+    ermek_masol = erme_forint.copy()
 
-# applying canny edge detection
-outline = cv2.Canny(blurred, 30, 150)
+    for felismert_kor_alakzatok in kor_alakzatok[0]:
+        x_koord, y_koord, detektalt_sugar = felismert_kor_alakzatok
+        detektalt_ermek = cv2.circle(
+            ermek_masol,
+            (int(x_koord), int(y_koord)),
+            int(detektalt_sugar),
+            (0, 255, 0),
+            4,
+        )
 
-# show canny edge det
-cv2.imshow("Edges", outline)
-cv2.waitKey(0)
+    cv2.imwrite("output_kepek/ermek_Hough.jpg", detektalt_ermek)
 
-# finding the contours
-(cnts, _) = cv2.findContours(outline, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    return kor_alakzatok
 
-# drawing contours
-cv2.drawContours(img, cnts, -1, (0, 255, 0), 2) #-1 will draw all of them
-cv2.imshow("Result", img)
-cv2.waitKey(0)
+def osszeg_szamitas():
+    ermek = {
+        "5 Ft": {
+            "ertek": 5,
+            "sugar": 19.5,
+            "arany": 1,
+            "darab": 0,
+        },
+        "10 Ft": {
+            "ertek": 10,
+            "sugar": 21.5,
+            "arany": 1.2,
+            "darab": 0,
+        },
+        "20 Ft": {
+            "ertek": 20,
+            "sugar": 22.5,
+            "arany": 1.249,
+            "darab": 0,
+        },
+        "50 Ft": {
+            "ertek": 50,
+            "sugar": 25,
+            "arany": 1.33,
+            "darab": 0,
+        },
+        "100 Ft": {
+            "ertek": 100,
+            "sugar": 21,
+            "arany": 1.115,
+            "darab": 0,
+        },
+        "200 Ft": {
+            "ertek": 200,
+            "sugar": 30,
+            "arany": 1.4,
+            "darab": 0,
+        },
+    }
 
-# Print how many coins are there
-print("There are %i coins" % len(cnts))
+    kor_alakzatok = erme_detektalasa()
+    sugar = []
+    koordinatak = []
+
+    for felismert_kor_alakzatok in kor_alakzatok[0]:
+        x_koord, y_koord, detektalt_sugar = felismert_kor_alakzatok
+        sugar.append(detektalt_sugar)
+        koordinatak.append([x_koord, y_koord])
+
+    legkisebb = min(sugar)
+    kuszobertek = 0.0375
+    teljes_osszeg = 0
+
+    korvonalas_ermek = cv2.imread('output_kepek/ermek_Hough.jpg', 1)
+    betutipus = cv2.FONT_HERSHEY_SIMPLEX
+
+    for erme in kor_alakzatok[0]:
+        arany_ell = erme[2] / legkisebb
+        koord_x = erme[0]
+        koord_y = erme[1]
+        for forint in ermek:
+            ertek = ermek[forint]['ertek']
+            if abs(arany_ell - ermek[forint]['arany']) <= kuszobertek:
+                ermek[forint]['darab'] += 1
+                teljes_osszeg += ermek[forint]['ertek']
+                cv2.putText(korvonalas_ermek, str(ertek), (int(koord_x), int(koord_y)), betutipus, 1,
+                            (0, 0, 0), 4)
+
+    print(f"Az ermek teljes osszege {teljes_osszeg} Ft")
+    for forint in ermek:
+        darabszam = ermek[forint]['darab']
+        print(f"{darabszam}x = {forint}")
+
+
+    cv2.imwrite("output_kepek/ermek_daraertek_korvonal.jpg", korvonalas_ermek)
 
 
 
-"""
-##Here just a quick OpenCV test
-size = np.size(img)
-skel = np.zeros(img.shape,np.uint8)
-
-ret,img = cv2.threshold(img,127,255,0)
-element = cv2.getStructuringElement(cv2.MORPH_CROSS,(3,3))
-done = False
-
-while( not done):
-    eroded = cv2.erode(img,element)
-    temp = cv2.dilate(eroded,element)
-    temp = cv2.subtract(img,temp)
-    skel = cv2.bitwise_or(skel,temp)
-    img = eroded.copy()
-
-    zeros = size - cv2.countNonZero(img)
-    if zeros==size:
-        done = True
-
-cv2.imshow("skel",skel)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-"""
-
+if __name__ == "__main__": ##az osszeg kiszamolasa a __name__ guardot kovetoen
+    osszeg_szamitas()
