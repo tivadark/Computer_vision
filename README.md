@@ -1,7 +1,14 @@
-# Computer_vision
+# Computer vision
 ### Gépi látás féléves beadandó feladat - Széchenyi István University in Győr
-
 ### Coin recognition application - Pénzérme számláló alkalmazás 
+
+####A fejlesztői és felhasználói dokumentáció megtalálható az alábbi repositoryban Dokumentacio.pdf néven.
+
+
+
+
+--------------------------------------------------------------------------------------
+
 
 How to set it up on Windows?
  ..to run the application first you need to install the imported packages for python.
