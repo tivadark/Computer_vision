@@ -8,6 +8,18 @@
 
 
 --------------------------------------------------------------------------------------
+**Beállítás windows alatt**
+Az alkalmazás futtatásához szükség van az OpenCV könyvtár telepítésére ami az alábbi linken: https://pypi.org/project/opencv-python/#files érhető el,
+tölthető le, nem Thonny fejlesztő környezet estén. Máskülönben az IDE-n belül Tools -> Manage packages és az opencv-python csomagot kiválasztva telepíthető a könyvtár.
+
+**Beállítás linux alatt**
+OpenCV telepítése az alábbi parancsot futtatva: pip install opencv-python
+
+A használt Python verzió: https://www.python.org/downloads/release/python-377/
+
+**Az alkalmazás fejlesztve és tesztelve a Python 3.7.7 verziója alatt.**
+
+--------------------------------------------------------------------------------------
 
 
 **How to set it up on Windows?**
@@ -18,7 +30,9 @@
 **How to set it up on Linux?**
 OpenCV: pip install opencv-python
 
-
-
 Python releases: https://www.python.org/downloads/release/python-377/
+
 **Tested with Python verion 3.7.7**
+
+
+
