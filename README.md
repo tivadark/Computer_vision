@@ -4,9 +4,9 @@
 
 #### A fejlesztői és felhasználói dokumentáció megtalálható az alábbi repositoryban Dokumentacio.pdf néven.
 
-
+<p align="center">
 ![Computed output image](https://github.com/tivadark/Computer_vision/blob/master/output_kepek/ermek_darabertek_korvonal.jpg?raw=true)
-
+</p>
 
 --------------------------------------------------------------------------------------
 **Beállítás windows alatt**
