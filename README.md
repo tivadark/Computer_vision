@@ -5,6 +5,7 @@
 #### A fejlesztői és felhasználói dokumentáció megtalálható az alábbi repositoryban Dokumentacio.pdf néven.
 
 
+![Computed output image](https://github.com/tivadark/Computer_vision/blob/master/output_kepek/ermek_darabertek_korvonal.jpg?raw=true)
 
 
 --------------------------------------------------------------------------------------
