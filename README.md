@@ -8,7 +8,7 @@
 
 <p align="center">
    <img src="https://github.com/tivadark/Computer_vision/blob/master/output_kepek/ermek_darabertek_korvonal.jpg" width="250" title="hover text">
-   <h1 style="text-align:center;">Centered Heading</h1>
+   asd
 </p>
 
 --------------------------------------------------------------------------------------
