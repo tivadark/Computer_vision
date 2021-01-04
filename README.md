@@ -9,6 +9,7 @@
 <p align="center">
    <img src="https://github.com/tivadark/Computer_vision/blob/master/output_kepek/ermek_darabertek_korvonal.jpg" width="250" title="Computed output coins picture">
 </p>
+<center>Egy kimeneti kép példa.</center>
 
 --------------------------------------------------------------------------------------
 **Beállítás windows alatt**
