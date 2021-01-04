@@ -1,6 +1,6 @@
 # Computer vision
-### Gépi látás féléves beadandó feladat - Széchenyi István University in Győr
-### Coin recognition application - Pénzérme számláló alkalmazás 
+#### Gépi látás féléves beadandó feladat - Széchenyi István University in Győr
+#### Coin recognition application - Pénzérme számláló alkalmazás 
 
 #### A fejlesztői és felhasználói dokumentáció megtalálható az alábbi repositoryban Dokumentacio.pdf néven.
 
@@ -30,6 +30,7 @@ A használt Python verzió: https://www.python.org/downloads/release/python-377/
 
 
 **How to set it up on Linux?**
+
 OpenCV: pip install opencv-python
 
 Python releases: https://www.python.org/downloads/release/python-377/
