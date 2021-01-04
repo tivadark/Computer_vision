@@ -9,7 +9,9 @@
 <p align="center">
    <img src="https://github.com/tivadark/Computer_vision/blob/master/output_kepek/ermek_darabertek_korvonal.jpg" width="250" title="Computed output coins picture">
 </p>
+
 --------------------------------------------------------------------------------------
+
 **Beállítás windows alatt**
 
 Az alkalmazás futtatásához szükség van az OpenCV könyvtár telepítésére ami az alábbi linken: https://pypi.org/project/opencv-python/#files érhető el,
