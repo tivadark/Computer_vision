@@ -4,8 +4,12 @@
 
 #### A fejlesztői és felhasználói dokumentáció megtalálható az alábbi repositoryban Dokumentacio.pdf néven.
 
+
+![Computed output image](https://github.com/tivadark/Computer_vision/blob/master/output_kepek/ermek_darabertek_korvonal.jpg?raw=true)
 <p align="center">
-[Computed output image](https://github.com/tivadark/Computer_vision/blob/master/output_kepek/ermek_darabertek_korvonal.jpg?raw=true)
+   <img src="https://github.com/tivadark/Computer_vision/blob/master/output_kepek/ermek_darabertek_korvonal.jpg" width="350" title="hover text">
+   <img src="your_relative_path_here_number_2_large_name" width="350" alt="accessibility text">
+
 </p>
 
 --------------------------------------------------------------------------------------
