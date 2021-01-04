@@ -5,7 +5,7 @@
 #### A fejlesztői és felhasználói dokumentáció megtalálható az alábbi repositoryban Dokumentacio.pdf néven.
 
 <p align="center">
-   <img src="https://github.com/tivadark/Computer_vision/blob/master/output_kepek/ermek_darabertek_korvonal.jpg" width="350" title="hover text">
+   <img src="https://github.com/tivadark/Computer_vision/blob/master/output_kepek/ermek_darabertek_korvonal.jpg" width="250" title="hover text">
 </p>
 
 --------------------------------------------------------------------------------------
